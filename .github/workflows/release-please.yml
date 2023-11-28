@@ -4,6 +4,7 @@ name: release-please
   push:
     branches:
       - master
+      - main
 jobs:
   release-please:
     runs-on: ubuntu-latest
@@ -13,9 +14,3 @@ jobs:
         with:
           release-type: simple
           package-name: release-please-action
-{%- if vars['extra-files'] is defined %}
-          extra-files: |
-{%- for file in vars['extra-files'] %}
-            {{ file }}
-{% endfor %}
-{%- endif %}
